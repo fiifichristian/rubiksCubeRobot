@@ -148,11 +148,10 @@ def sysArg():
     parser = argparse.ArgumentParser(description="Rubik's Cube Solving Program by Group 5")
     options = parser.add_mutually_exclusive_group()
     options.add_argument("-s",  "--scramble", action="store_true", help="Gives a set of instructions for scrambling the cube")
-    options.add_argument("-S", "--solve", action="store", help="Uses camera to help solve the cube")
+    options.add_argument("-S", "--solve", action="store", help="Uses camera to help solve the cube. Use argument 0 for 2D scanning and 1 for 3D scanning")
     options.add_argument("-p", "--caliCoord", action="store_true", help="Uses camera to calibrate positions of the colours on the cube")
     options.add_argument("-c", "--caliColours", action="store_true", help="Uses camera to calibrate colours read")
     args = parser.parse_args()
-
 
     if args.scramble:
         print(scramble(25)) 
@@ -182,7 +181,7 @@ def close():
 
     quit()
 
-cams = [cv2.VideoCapture(0, cv2.CAP_DSHOW), cv2.VideoCapture(1, cv2.CAP_DSHOW)]
+cams = (cv2.VideoCapture(0, cv2.CAP_DSHOW), cv2.VideoCapture(1, cv2.CAP_DSHOW))
 
 for cam in cams:
     cam.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
