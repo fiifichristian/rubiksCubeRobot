@@ -59,10 +59,10 @@ def camera():
             cubeColoursCodes = [[[(0,0,0) for i in range(0,3)] for j in range(0, 3)] for k in range(0,6)]
 
         cv2.imshow("Up, Left, Front", frame[0])
-        cv2.imshow("Bottom, Back, Right", frame[1])
+        if threeDim:
+            cv2.imshow("Bottom, Back, Right", frame[1])
 
-        
-
+    
     cv2.destroyAllWindows()
     return cubeColoursCodes
 
@@ -82,7 +82,7 @@ def analysis(colourCodes: list):
         print("incorrect scanning, try again")
         instructions = None
 
-    return None, cubeString
+    return instructions, cubeString
 
 def scramble(instrNum: int = 20):
 
@@ -91,12 +91,12 @@ def scramble(instrNum: int = 20):
     faces = ('F', 'B', 'L', 'R', 'D', 'U')
     directions = ('', '\'', '2')
 
-    inst = ["F"]
-    j = k = 0
+    inst = ["F", "B"]
+    j = k = randint(0, len(faces) - 1)
 
     for i in range(instrNum):
-    
-        while faces[j] == inst[len(inst)-1][0]:
+        
+        while faces[j] == inst[len(inst)-1][0] and faces[j] == inst[len(inst)-2][0]:
             j = randint(0, len(faces) - 1)
         
         k = randint(0, len(directions) - 1)
@@ -168,7 +168,7 @@ def sysArg():
         inst, string = analysis(i)
 
         print(inst)
-        printLayout(string)
+        # printLayout(string)
     else:
         print("\nNo arguments provided\n")
         parser.print_help()
@@ -193,3 +193,6 @@ threeDim = False
 
 sysArg()
 close()
+
+
+# a function called calibrate that allows an input o

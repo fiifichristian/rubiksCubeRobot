@@ -63,21 +63,6 @@ def colMattoStr(cubeColours):
                     
                     result = f"{result}{cubeColours[i][k][j][0]}"
 
-                    # match cubeColours[i][k][j]:
-                    #     case (0, 0, 255): # red
-                    #         result = f"{result}r"
-                    #     case (0, 123, 255): # orange
-                    #         result = f"{result}o"
-                    #     case (0, 255, 255): # yellow
-                    #         result = f"{result}y"
-                    #     case (199, 13, 0): # blue
-                    #         result = f"{result}b"
-                    #     case (0, 255, 77): # green
-                    #         result = f"{result}g"
-                    #     case (255, 255, 255): # white
-                    #         result = f"{result}w"
-                    #     case other:
-                    #         result = f"{result}n"
     return result
 
 def midColToName(array):
