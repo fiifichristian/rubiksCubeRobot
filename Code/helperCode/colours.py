@@ -38,7 +38,7 @@ def hlsToName(colour: tuple):
 
     lum = 0.2126*rgb[0] + 0.7152*rgb[1] + 0.0722*rgb[2]
 
-    if (max(rgb) -  min(rgb)) < 0.25: # and : # white is different as you cant use hue
+    if (max(rgb) -  min(rgb)) < 0.21: # and : # white is different as you cant use hue
         return "white"
     if (colour[0] < 8 or colour[0] > 234):
         return "red"

@@ -65,28 +65,27 @@ def colMattoStr(cubeColours):
 
     return result
 
-def midColToName(array):
+# def midColToName(array):
 
-    result = []
+#     result = []
 
-    for col in array:
-        match col:
-            case (0, 0, 255): # red
-                result.append("R")
-            case (0, 123, 255): # orange
-                result.append("O")
-            case (0, 255, 255): # yellow
-                result.append("Y")
-            case (199, 13, 0): # blue
-                result.append("B")
-            case (0, 255, 77): # green
-                result.append("G")
-            case (255, 255, 255): # white
-                result.append("W")
-            case other:
-                result.append("N")
+#     for col in array:
+#         if col == (0, 0, 255): # red
+#             result.append("R")
+#         elif col == (0, 123, 255): # orange
+#             result.append("O")
+#         elif col == (0, 255, 255): # yellow
+#             result.append("Y")
+#         elif col == (199, 13, 0): # blue
+#             result.append("B")
+#         elif col == (0, 255, 77): # green
+#             result.append("G")
+#         elif col == (255, 255, 255): # white
+#             result.append("W")
+#         else:
+#             result.append("N")
 
-    return result
+#     return result
 
 def getMidColour(string):
 

@@ -28,4 +28,4 @@ options:
 
 ## Acknowledgements
 
- -[Kociemba Solving Algorithm](https://github.com/muodov/kociemba)
+[Kociemba Solving Algorithm](https://github.com/muodov/kociemba)

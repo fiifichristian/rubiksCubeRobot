@@ -16,7 +16,7 @@ class Cube():
 
     def __str__(self):
         return self._layout
-
+    
     @property
     def cubeString(self):
         return self._cubeString.upper()
@@ -143,8 +143,8 @@ def camera():
             colours2D = getColours(hlsFrame[0], posMat2D, True)
             drawText(frame[0], posMat2D, colours2D)
 
-        drawUnfoldedCube(frame[0], cubeSize=10, gap=5, startPos= (15, 15), colourMat=cubeColoursCodes)
-        drawUnfoldedCube(frame[1], cubeSize=10, gap=5, startPos= (15, 15), colourMat=cubeColoursCodes)
+        drawUnfoldedCube(frame[0], cubeSize=15, gap=5, startPos= (15, 15), colourMat=cubeColoursCodes)
+        drawUnfoldedCube(frame[1], cubeSize=15, gap=5, startPos= (15, 15), colourMat=cubeColoursCodes)
 
         key = cv2.waitKey(1)
 
