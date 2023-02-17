@@ -2,11 +2,10 @@ import cv2, sys, kociemba, argparse
 import numpy as np
 from random import seed, randint
 
-sys.path.insert(1, 'helperCode/')
-from colours import getColours, saveData2D, saveData3D
-from guiDraw import drawCircles, drawText, drawUnfoldedCube
-from matrices import posMat2D, posMat3D_0, posMat3D_1, colMattoStr, getMidColour, colourStrToKociString
-from calibration import calibratePositions
+from helperCode.colours import getColours, saveData2D, saveData3D
+from helperCode.guiDraw import drawCircles, drawText, drawUnfoldedCube
+from helperCode.matrices import posMat2D, posMat3D_0, posMat3D_1, colMattoStr, getMidColour, colourStrToKociString
+from helperCode.calibration import calibratePositions
 
 class Cube():
 
@@ -16,7 +15,7 @@ class Cube():
 
     def __str__(self):
         return self._layout
-    
+
     @property
     def cubeString(self):
         return self._cubeString.upper()
